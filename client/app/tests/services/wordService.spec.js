@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var word_service_1 = require("../../services/word.service");
 var testing_1 = require("@angular/core/testing");
 var http_1 = require("@angular/http");

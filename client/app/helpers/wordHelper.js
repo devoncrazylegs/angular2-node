@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.wordHelper = {
     vowels: ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"],
     convertWordToPigLatin: function (stringToConvert) {

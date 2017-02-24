@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var wordHelper_1 = require("../../helpers/wordHelper");
 describe("Helper: wordHelper", function () {
     beforeEach(function () {

@@ -18,11 +18,16 @@ gulp.task('build-jquery', function() {
         .pipe(gulp.dest(assetsURL + '/js'));
 });
 
-gulp.task('build-angular2-toaster', function() {
-
-    gutil.log('build toaster CSS');
+gulp.task('build-ng2-toastr', function() {
+    gutil.log('build toastr js');
     gulp.src([
-        'node_modules/angular2-toaster/toaster.css'
+        'node_modules/ng2-toastr/bundles/ng2-toastr.min.js'
+    ])
+        .pipe(gulp.dest(assetsURL + '/js'));
+
+    gutil.log('build toastr CSS');
+    gulp.src([
+        'node_modules/ng2-toastr/bundles/ng2-toastr.min.css'
     ])
         .pipe(gulp.dest(assetsURL + '/css'));
 });
@@ -60,6 +65,6 @@ gulp.task('build', [
     'build-jquery',
     'build-bootstrap',
     'build-SCSS',
-    'build-angular2-toaster'
+    'build-ng2-toastr'
 ]);
 
