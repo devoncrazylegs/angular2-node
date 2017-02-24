@@ -24,7 +24,9 @@ export class TopTenComponent {
 
         this._wordService._emitter.subscribe((response) => {
             this.words.unshift(response.word);
-            this.words.splice(-1, 1);
+            if(this.words.length >= 10) {
+                this.words.splice(-1, 1);
+            }
         });
     }
 }

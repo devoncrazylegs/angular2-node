@@ -23,7 +23,9 @@ var TopTenComponent = (function () {
         });
         this._wordService._emitter.subscribe(function (response) {
             _this.words.unshift(response.word);
-            _this.words.splice(-1, 1);
+            if (_this.words.length >= 10) {
+                _this.words.splice(-1, 1);
+            }
         });
     };
     return TopTenComponent;

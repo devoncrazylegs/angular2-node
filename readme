@@ -21,4 +21,4 @@ Important commands
 'npm run test' inside client folder to start Karma Test Runner
 
 If you have any problems with the Redis instance please
-install redis server -- sudo apt-get install redis-server --save
+install redis server -- sudo apt-get install redis-server
