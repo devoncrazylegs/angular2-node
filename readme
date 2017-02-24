@@ -6,6 +6,8 @@ Installation instructions
 
 3 - run 'gulp build' '/client/' folder to build CSS and Javascript files
 
+4 - run 'npm start' to start the application. Please bear in mind I have left some development dependencies in this application to give clarity as to how it was built
+
 
 About this application
 
