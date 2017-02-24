@@ -1,1 +1,19 @@
-i am the component
+<div id="pig-latin-wrapper">
+    <div class="container">
+        <h1>What would you like to 'Pig Latin-ify'?</h1>
+        <form #pigLatinForm="ngForm" novalidate="novalidate">
+            <div class="form-group">
+                <input type="text" class="form-control" id="word-to-pigify" (keyup)="keyInput($event.keyCode)" autocomplete="off" required [(ngModel)]="inputString" name="inputString" #inputText="ngModel" autofocus />
+                <div [hidden]="inputText.valid || inputText.pristine" class="alert alert-danger">Please enter a value</div>
+                <button type="submit" class="btn btn-success" id="submit-button" (click)="parseInput(inputText.value)" >Pig Latin-ify Me!!</button>
+            </div>
+        </form>
+        <div class="pig-latined-word" *ngIf="inputString">
+            {{ inputString }} : {{ pigLatinReturn }}
+        </div>
+    </div>
+    <div class="container">
+        <top-ten></top-ten>
+    </div>
+</div>
+

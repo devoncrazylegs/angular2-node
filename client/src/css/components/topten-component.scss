@@ -1,0 +1,27 @@
+top-ten {
+  display: inline-block;
+  width:100%;
+
+  h2 {
+    display:block;
+    width:100%;
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    padding-top:20px;
+    padding-bottom:20px;
+    font-family: "Open Sans", sans-serif!important;
+    font-weight:200!important;
+    font-size:40px!important;
+  }
+
+  ul {
+    li {
+      font-family: "Open Sans", sans-serif!important;
+      font-weight:200!important;
+      font-size:20px;
+      margin-bottom:7px;
+    }
+  }
+
+}
+

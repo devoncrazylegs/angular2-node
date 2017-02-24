@@ -9,8 +9,11 @@ require("app/rxjs-extensions");
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
-var ng2_toastr_1 = require("ng2-toastr");
+var http_1 = require("@angular/http");
 var PigLatinComponent_1 = require("./components/PigLatinComponent");
+var TopTenComponent_1 = require("./components/TopTenComponent");
+var word_service_1 = require("./services/word.service");
+var ng2_toastr_1 = require("ng2-toastr");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -21,13 +24,17 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
-            ng2_toastr_1.ToastModule,
-            forms_1.ReactiveFormsModule
+            forms_1.ReactiveFormsModule,
+            http_1.HttpModule,
+            ng2_toastr_1.ToastModule.forRoot()
         ],
         declarations: [
-            PigLatinComponent_1.PigLatinComponent
+            PigLatinComponent_1.PigLatinComponent,
+            TopTenComponent_1.TopTenComponent
         ],
-        providers: [],
+        providers: [
+            word_service_1.WordService
+        ],
         bootstrap: [PigLatinComponent_1.PigLatinComponent]
     })
 ], AppModule);

@@ -8,26 +8,23 @@ var gulp = require('gulp'),
     //useref = require('gulp-useref'),
     tsProject = ts.createProject("tsconfig.json");
 
+var assetsURL = "app/assets/";
+
 gulp.task('build-jquery', function() {
     gutil.log('build jQuery');
     gulp.src([
         'node_modules/jquery/dist/jquery.min.js'
     ])
-        .pipe(gulp.dest('assets/js'));
+        .pipe(gulp.dest(assetsURL + '/js'));
 });
 
-gulp.task('build-ng2-toastr', function() {
-    gutil.log('build toastr js');
-    gulp.src([
-        'node_modules/ng2-toastr/bundles/ng2-toastr.min.js'
-    ])
-        .pipe(gulp.dest('assets/js'));
+gulp.task('build-angular2-toaster', function() {
 
-    gutil.log('build toastr CSS');
+    gutil.log('build toaster CSS');
     gulp.src([
-        'node_modules/ng2-toastr/bundles/ng2-toastr.min.css'
+        'node_modules/angular2-toaster/toaster.css'
     ])
-        .pipe(gulp.dest('assets/css'));
+        .pipe(gulp.dest(assetsURL + '/css'));
 });
 
 gulp.task('build-bootstrap', function() {
@@ -35,24 +32,24 @@ gulp.task('build-bootstrap', function() {
     gulp.src([
         'node_modules/bootstrap/dist/css/bootstrap.min.css'
     ])
-        .pipe(gulp.dest('assets/css'));
+        .pipe(gulp.dest(assetsURL + '/css'));
 
     gutil.log('build Bootstrap JS');
     gulp.src([
         'node_modules/bootstrap/dist/js/bootstrap.min.js'
     ])
-        .pipe(gulp.dest('assets/js'));
+        .pipe(gulp.dest(assetsURL + '/js'));
 });
 
 gulp.task('build-SCSS', function() {
 
-    gutil.log('build sass...');
+    gutil.log('build scss...');
     gulp.src([
         'src/css/**/*.scss'
     ])
         .pipe(sass({style: 'expanded'}))
         .on('error', gutil.log)
-        .pipe(gulp.dest('assets/css'));
+        .pipe(gulp.dest(assetsURL + '/css'));
 });
 
 gulp.task('watch', function() {
@@ -63,6 +60,6 @@ gulp.task('build', [
     'build-jquery',
     'build-bootstrap',
     'build-SCSS',
-    'build-ng2-toastr'
+    'build-angular2-toaster'
 ]);
 

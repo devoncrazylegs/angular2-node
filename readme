@@ -1,5 +1,22 @@
-// npm install in NodeJS layer
+Installation instructions
 
-// npm install in /client/ Angular" layer
+1 - run 'npm install' inside root folder for NodeJS layer dependencies
 
-// gulp build
+2 - run 'npm install' inside '/client/' folder for Angular2 layer dependencies
+
+3 - run 'gulp build' '/client/' folder to build CSS and Javascript files
+
+
+About this application
+
+This application is built in Angular2 and sits upon a custom NodeJS / Express server. It uses a Redis Instance for data persistence, Gulp as the build runner and SASS for all CSS.
+I have used KarmaJS for testing
+
+
+Important commands
+
+'npm start' inside the root folder to start the application
+'npm run test' inside client folder to start Karma Test Runner
+
+If you have any problems with the Redis instance please
+install redis server -- sudo apt-get install redis-server --save
