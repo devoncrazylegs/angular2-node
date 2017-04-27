@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var testing_1 = require("@angular/core/testing");
 var PigLatinComponent_1 = require("../../components/PigLatinComponent");
 var word_service_1 = require("../../services/word.service");

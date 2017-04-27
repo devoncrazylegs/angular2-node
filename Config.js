@@ -1,3 +1,5 @@
-module.exports = Config = {
+const Config = {
 
 };
+
+export default Config;

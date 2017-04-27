@@ -8,7 +8,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var word_service_1 = require("../services/word.service");
 var TopTenComponent = (function () {
@@ -28,16 +27,16 @@ var TopTenComponent = (function () {
             }
         });
     };
+    TopTenComponent = __decorate([
+        core_1.Component({
+            selector: 'top-ten',
+            moduleId: module.id,
+            templateUrl: '/app/views/top-ten.html',
+            styleUrls: ['/app/assets/css/components/topten-component.css']
+        }), 
+        __metadata('design:paramtypes', [word_service_1.WordService])
+    ], TopTenComponent);
     return TopTenComponent;
 }());
-TopTenComponent = __decorate([
-    core_1.Component({
-        selector: 'top-ten',
-        moduleId: module.id,
-        templateUrl: '/app/views/top-ten.html',
-        styleUrls: ['/app/assets/css/components/topten-component.css']
-    }),
-    __metadata("design:paramtypes", [word_service_1.WordService])
-], TopTenComponent);
 exports.TopTenComponent = TopTenComponent;
 //# sourceMappingURL=TopTenComponent.js.map
