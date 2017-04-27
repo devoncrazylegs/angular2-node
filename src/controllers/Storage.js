@@ -4,7 +4,6 @@ import client from '../lib/redisClient';
 class Storage {
     storeTerm(ctx) {
         return new Promise((resolve, reject) => {
-            console.log(ctx.request.body);
             let itemToStore = `${ctx.request.body.word}:${ctx.request.body.pigLatinWord}`;
 
             client.lpush('words', itemToStore.toString("base64"), (err, reply) => {
