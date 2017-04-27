@@ -1,67 +1,54 @@
-var express = require('express');
-var app = express();
-var path = require('path');
+'use strict';
 
-global.appRoot = path.resolve(__dirname);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+var _koa = require('koa');
 
-// Config file
+var _koa2 = _interopRequireDefault(_koa);
+
+var _koaBodyparser = require('koa-bodyparser');
+
+var _koaBodyparser2 = _interopRequireDefault(_koaBodyparser);
+
+var _kcors = require('kcors');
+
+var _kcors2 = _interopRequireDefault(_kcors);
+
+var _path = require('path');
+
+var _path2 = _interopRequireDefault(_path);
+
+var _koaStatic = require('koa-static');
+
+var _koaStatic2 = _interopRequireDefault(_koaStatic);
+
+var _index = require('./src/routes/index');
+
+var _index2 = _interopRequireDefault(_index);
+
+var _storage = require('./src/routes/storage');
+
+var _storage2 = _interopRequireDefault(_storage);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+global.appRoot = _path2.default.resolve(__dirname);
+
+// Routes
+
+
 var config = require('./Config');
 
-var routes = require('./routes/index');
-var storageRoutes = require('./routes/storage');
+var app = new _koa2.default();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.use((0, _koaBodyparser2.default)());
+app.use((0, _koaStatic2.default)('client'));
+app.use((0, _koaStatic2.default)(_path2.default.join('client/assets')));
+app.use(_index2.default.routes());
+app.use(_index2.default.allowedMethods());
+app.use(_storage2.default.routes());
+app.use(_storage2.default.allowedMethods());
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-
-app.use(express.static('client'));
-app.use(express.static(path.join(__dirname, '/client/assets')));
-
-app.use('/', routes);
-app.use('/store', storageRoutes);
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
-
-// error handlers
-
-// development error handler
-// will print stacktrace
-if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
-  });
-}
-
-// production error handler
-// no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
-});
-
-
-module.exports = app;
+exports.default = app;

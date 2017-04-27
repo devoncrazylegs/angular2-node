@@ -8,7 +8,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var wordHelper_1 = require("../helpers/wordHelper");
 var word_service_1 = require("../services/word.service");
@@ -36,17 +35,16 @@ var PigLatinComponent = (function () {
             });
         }
     };
+    PigLatinComponent = __decorate([
+        core_1.Component({
+            selector: 'pig-latin',
+            moduleId: module.id,
+            templateUrl: '/app/views/home.html',
+            styleUrls: ['/app/assets/css/components/piglatin-component.css']
+        }), 
+        __metadata('design:paramtypes', [word_service_1.WordService, ng2_toastr_1.ToastsManager, core_1.ViewContainerRef])
+    ], PigLatinComponent);
     return PigLatinComponent;
 }());
-PigLatinComponent = __decorate([
-    core_1.Component({
-        selector: 'pig-latin',
-        moduleId: module.id,
-        templateUrl: '/app/views/home.html',
-        styleUrls: ['/app/assets/css/components/piglatin-component.css']
-    }),
-    __metadata("design:paramtypes", [word_service_1.WordService,
-        ng2_toastr_1.ToastsManager, core_1.ViewContainerRef])
-], PigLatinComponent);
 exports.PigLatinComponent = PigLatinComponent;
 //# sourceMappingURL=PigLatinComponent.js.map

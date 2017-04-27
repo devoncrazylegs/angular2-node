@@ -12,6 +12,8 @@ import { TopTenComponent } from "./components/TopTenComponent";
 import { WordService } from "./services/word.service";
 import { ToastModule } from "ng2-toastr";
 
+
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -26,7 +28,6 @@ import { ToastModule } from "ng2-toastr";
     ],
     providers: [
         WordService
-
     ],
     bootstrap:    [ PigLatinComponent ]
 })

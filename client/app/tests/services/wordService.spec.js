@@ -1,9 +1,8 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var word_service_1 = require("../../services/word.service");
-var testing_1 = require("@angular/core/testing");
-var http_1 = require("@angular/http");
-var testing_2 = require("@angular/http/testing");
+var testing_1 = require('@angular/core/testing');
+var http_1 = require('@angular/http');
+var testing_2 = require('@angular/http/testing');
 describe('Service: WordService', function () {
     var backend, service;
     beforeEach(testing_1.async(function () {
